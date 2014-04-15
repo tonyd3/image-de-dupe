@@ -18,6 +18,7 @@ object ImageDeDupe {
       file => println("Reading: " + file.getAbsolutePath);
         (file.getAbsolutePath, getLuminance(resizeImage(file.getAbsolutePath, 32, 32)))
     }
+    println("Comparing Images")
     imageMap.foreach {
       file1 =>
         imageMap.splitAt(imageMap.indexOf(file1))._2.foreach {
@@ -26,7 +27,6 @@ object ImageDeDupe {
 
         }
     }
-    println("Comparing Images")
     println("Done")
   }
 
